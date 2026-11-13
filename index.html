@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="da">
 <head>
@@ -6,233 +5,100 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>StockRadar – Dagens aktiesignaler</title>
 <style>
-:root {
-  color-scheme: dark;
-  font-family: Arial, sans-serif;
-}
+:root { color-scheme: dark; font-family: Arial, sans-serif; }
 * { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: #0d1726;
-  color: #f1f5f9;
-}
-main {
-  max-width: 650px;
-  margin: auto;
-  padding: 25px 16px;
-}
+body { margin: 0; background: #0d1726; color: #f1f5f9; }
+main { max-width: 650px; margin: auto; padding: 25px 16px; }
 h1 { margin: 0; font-size: 32px; }
 h2 { font-size: 19px; }
 h3 { font-size: 16px; }
-.subtitle, .muted { color: #94a3b8; }
+.subtitle,.muted { color: #94a3b8; }
 .header { margin-bottom: 25px; }
-.header-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-.card {
-  background: #19283c;
-  border: 1px solid #304157;
-  padding: 18px;
-  border-radius: 13px;
-  margin-bottom: 12px;
-}
-.clickable { cursor: pointer; }
-.clickable:hover { border-color: #38bdf8; }
-.card-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-}
-.score {
-  color: #34d399;
-  font-size: 23px;
-  font-weight: bold;
-}
-.ticker {
-  color: #94a3b8;
-  font-size: 13px;
-  margin-top: 5px;
-}
-button {
-  background: #2563eb;
-  color: white;
-  border: 0;
-  border-radius: 9px;
-  padding: 12px 16px;
-  cursor: pointer;
-  font-size: 14px;
-}
-button:hover { background: #1d4ed8; }
-button:focus-visible, .clickable:focus-visible {
-  outline: 2px solid #7dd3fc;
-  outline-offset: 3px;
-}
-.secondary { background: #334155; }
-.secondary:hover { background: #475569; }
-.full { width: 100%; margin-top: 15px; }
-.badge {
-  display: inline-block;
-  color: #fbbf24;
-  font-size: 13px;
-  margin-top: 5px;
-}
-.positive { color: #34d399; }
-.negative { color: #fca5a5; }
-.overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: #000b;
-  padding: 16px;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-}
-.modal {
-  background: #19283c;
-  border: 1px solid #304157;
-  border-radius: 16px;
-  padding: 22px;
-  width: 100%;
-  max-width: 550px;
-  max-height: 88vh;
-  overflow-y: auto;
-}
-.modal-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-.close { background: #334155; }
-.section {
-  padding: 12px 0;
-  border-bottom: 1px solid #304157;
-}
-.section p {
-  line-height: 1.55;
-  font-size: 14px;
-}
-.news {
-  margin-top: 15px;
-  padding: 14px;
-  background: #0d1726;
-  border-radius: 10px;
-}
-a { color: #7dd3fc; }
-.small { font-size: 12px; line-height: 1.5; }
-.info-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 9px 0;
-  border-bottom: 1px solid #304157;
-  font-size: 14px;
-}
-ul { padding-left: 20px; line-height: 1.6; }
-li { margin-bottom: 7px; }
-.error { color: #fca5a5; }
+.header-top,.card-top,.modal-head { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.card { background:#19283c; border:1px solid #304157; padding:18px; border-radius:13px; margin-bottom:12px; }
+.clickable { cursor:pointer; }
+.clickable:hover { border-color:#38bdf8; }
+.score { color:#34d399; font-size:23px; font-weight:bold; }
+.ticker { color:#94a3b8; font-size:13px; margin-top:5px; }
+button { background:#2563eb; color:white; border:0; border-radius:9px; padding:12px 16px; cursor:pointer; font-size:14px; }
+button:hover { background:#1d4ed8; }
+button:disabled { opacity:.55; cursor:default; }
+button:focus-visible,.clickable:focus-visible,a:focus-visible { outline:2px solid #7dd3fc; outline-offset:3px; }
+.secondary,.close { background:#334155; }
+.secondary:hover,.close:hover { background:#475569; }
+.full { width:100%; margin-top:15px; }
+.badge { display:inline-block; color:#fbbf24; font-size:13px; margin-top:5px; }
+.positive { color:#34d399; }
+.negative,.error { color:#fca5a5; }
+.overlay { display:none; position:fixed; inset:0; background:#000b; padding:16px; align-items:center; justify-content:center; z-index:10; }
+.modal { background:#19283c; border:1px solid #304157; border-radius:16px; padding:22px; width:100%; max-width:550px; max-height:88vh; overflow-y:auto; }
+.section { padding:12px 0; border-bottom:1px solid #304157; }
+.section p { line-height:1.55; font-size:14px; }
+.news { margin-top:15px; padding:14px; background:#0d1726; border-radius:10px; }
+a { color:#7dd3fc; }
+.small { font-size:12px; line-height:1.5; }
+.info-row { display:flex; justify-content:space-between; gap:12px; padding:9px 0; border-bottom:1px solid #304157; font-size:14px; }
+ul { padding-left:20px; line-height:1.6; }
+li { margin-bottom:7px; }
+.sentiment-track { position:relative; height:12px; background:linear-gradient(to right,#ef4444,#94a3b8,#22c55e); border-radius:10px; margin:20px 0 12px; }
+.sentiment-marker { position:absolute; top:-5px; width:4px; height:22px; background:white; border-radius:3px; transform:translateX(-50%); }
+.sentiment-labels { display:flex; justify-content:space-between; gap:8px; font-size:11px; color:#94a3b8; }
+.sentiment-heading { display:flex; justify-content:space-between; align-items:center; gap:12px; }
 </style>
 </head>
 <body>
-
 <main>
   <div class="header">
     <div class="header-top">
       <h1>StockRadar 📈</h1>
-      <button class="secondary" onclick="visMetode()">
-        Analyse?
-      </button>
+      <button class="secondary" onclick="visMetode()">Analyse?</button>
     </div>
-    <p class="subtitle">
-      Dagens aktiesignaler · Danmark og USA
-    </p>
+    <p class="subtitle">Dagens aktiesignaler · Danmark og USA</p>
   </div>
-
-  <p class="muted small" id="status">
-    Henter seneste analyser...
-  </p>
-
+  <p class="muted small" id="status">Henter seneste analyser...</p>
   <h2>Dagens købskandidater</h2>
   <div id="kandidater"></div>
-
-  <button class="full" id="alleKnap"
-          onclick="visAlle()" disabled>
-    Se alle aktier på listen
-  </button>
-
-  <p class="muted small" style="margin-top:20px">
-    StockRadar anvender eksperimentelle tekniske
-    signaler. Ikke personlig investeringsrådgivning.
-    Historiske signaler garanterer ikke fremtidige afkast.
-  </p>
+  <button class="full" id="alleKnap" onclick="visAlle()" disabled>Se alle aktier på listen</button>
+  <p class="muted small" style="margin-top:20px">StockRadar anvender eksperimentelle tekniske signaler. Ikke personlig investeringsrådgivning. Historiske signaler garanterer ikke fremtidige afkast.</p>
 </main>
-
-<div class="overlay" id="overlay"
-     onclick="lukVedBaggrund(event)">
-  <div class="modal" role="dialog"
-       aria-modal="true" aria-labelledby="modalTitel">
+<div class="overlay" id="overlay" onclick="lukVedBaggrund(event)">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitel">
     <div class="modal-head">
       <h2 id="modalTitel"></h2>
-      <button class="close" onclick="luk()">✕</button>
+      <button class="close" onclick="luk()" aria-label="Luk popup">✕</button>
     </div>
     <div id="modalIndhold"></div>
   </div>
 </div>
-
 <script>
 let aktier = [];
 let genereret = "";
 let sidsteFokus = null;
-
+let popupVersion = 0;
 const $ = id => document.getElementById(id);
 
 function escapeHTML(tekst) {
-  return String(tekst ?? "").replace(
-    /[&<>"']/g,
-    c => ({
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#39;"
-    })[c]
-  );
+  return String(tekst ?? "").replace(/[&<>"']/g, c => ({
+    "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
+  })[c]);
 }
-
 function tal(v, decimaler=2) {
+  if (v === null || v === undefined || v === "") return "–";
   const n = Number(v);
-  return Number.isFinite(n)
-    ? n.toLocaleString("da-DK", {
-        minimumFractionDigits: decimaler,
-        maximumFractionDigits: decimaler
-      })
-    : "–";
+  return Number.isFinite(n) ? n.toLocaleString("da-DK", {
+    minimumFractionDigits:decimaler, maximumFractionDigits:decimaler
+  }) : "–";
 }
-
 function dato(iso) {
   if (!iso) return "Ukendt";
   const d = new Date(iso);
-  return Number.isNaN(d.getTime())
-    ? String(iso)
-    : d.toLocaleString("da-DK", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-        hour: "2-digit",
-        minute: "2-digit"
-      });
+  return Number.isNaN(d.getTime()) ? String(iso) : d.toLocaleString("da-DK", {
+    day:"numeric", month:"long", year:"numeric", hour:"2-digit", minute:"2-digit"
+  });
 }
-
-function erKoeb(a) {
-  return a.signal === "Stærk købskandidat";
-}
-
+function erKoeb(a) { return a.signal === "Stærk købskandidat"; }
 function aabn(titel, indhold) {
+  popupVersion++;
   sidsteFokus = document.activeElement;
   $("modalTitel").textContent = titel;
   $("modalIndhold").innerHTML = indhold;
@@ -240,423 +106,201 @@ function aabn(titel, indhold) {
   document.body.style.overflow = "hidden";
   document.querySelector(".close").focus();
 }
-
 function luk() {
+  popupVersion++;
   $("overlay").style.display = "none";
   document.body.style.overflow = "";
-  if (sidsteFokus && sidsteFokus.isConnected) {
-    sidsteFokus.focus();
-  }
+  if (sidsteFokus && sidsteFokus.isConnected) sidsteFokus.focus();
 }
-
-function lukVedBaggrund(event) {
-  if (event.target.id === "overlay") luk();
-}
-
+function lukVedBaggrund(event) { if (event.target.id === "overlay") luk(); }
 document.addEventListener("keydown", event => {
-  if (event.key === "Escape") luk();
+  if (event.key === "Escape" && $("overlay").style.display === "flex") luk();
+  if (event.key === "Tab" && $("overlay").style.display === "flex") {
+    const items = [...document.querySelectorAll('#overlay button:not(:disabled), #overlay a[href], #overlay [tabindex="0"]')];
+    if (!items.length) return;
+    const first = items[0], last = items[items.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  }
 });
-
 function opretKort(a) {
   const kort = document.createElement("div");
   kort.className = "card clickable";
   kort.tabIndex = 0;
   kort.setAttribute("role", "button");
-  kort.setAttribute(
-    "aria-label", "Se analyse af " + a.navn
-  );
-
+  kort.setAttribute("aria-label", "Se analyse af " + a.navn);
   kort.innerHTML = `
-    <div class="card-top">
-      <div>
-        <strong>${escapeHTML(a.navn)}</strong>
-        <div class="ticker">
-          ${escapeHTML(a.ticker)}
-        </div>
-        <div class="badge">
-          ${escapeHTML(a.signal)}
-        </div>
-      </div>
-      <div class="score">${tal(a.score,0)}/100</div>
-    </div>
-  `;
-
+    <div class="card-top"><div>
+      <strong>${escapeHTML(a.navn)}</strong>
+      <div class="ticker">${escapeHTML(a.ticker)}</div>
+      <div class="badge">${escapeHTML(a.signal)}</div>
+    </div><div class="score">${tal(a.score,0)}/100</div></div>`;
   kort.onclick = () => visAktie(a.ticker);
   kort.onkeydown = e => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      visAktie(a.ticker);
-    }
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); visAktie(a.ticker); }
   };
   return kort;
 }
-
 function visForside() {
   const container = $("kandidater");
   container.innerHTML = "";
-
   const anbefalede = aktier.filter(erKoeb);
-
   if (!anbefalede.length) {
-    container.innerHTML = `
-      <div class="card">
-        <strong>Ingen bekræftede købssignaler</strong>
-        <p class="muted">
-          StockRadar afventer stærkere tekniske signaler.
-        </p>
-      </div>
-    `;
+    container.innerHTML = `<div class="card"><strong>Ingen bekræftede købssignaler</strong>
+      <p class="muted">StockRadar afventer stærkere tekniske signaler.</p></div>`;
   }
-
-  anbefalede
-    .sort((a,b) => b.score - a.score)
-    .forEach(a => container.appendChild(opretKort(a)));
-
+  anbefalede.sort((a,b) => b.score - a.score).forEach(a => container.appendChild(opretKort(a)));
   $("alleKnap").disabled = false;
 }
-
 function visAktie(ticker) {
   const a = aktier.find(x => x.ticker === ticker);
   if (!a) return;
-
   const f = a.forklaring || {};
-  const positive = Array.isArray(f.positive)
-    ? f.positive : [];
-  const negative = Array.isArray(f.negative)
-    ? f.negative : [];
-
+  const positive = Array.isArray(f.positive) ? f.positive : [];
+  const negative = Array.isArray(f.negative) ? f.negative : [];
   const liste = (punkter, klasse) => punkter.length
-    ? `<ul class="${klasse}">` +
-      punkter.map(p => `<li>${escapeHTML(p)}</li>`)
-        .join("") + "</ul>"
+    ? `<ul class="${klasse}">${punkter.map(p => `<li>${escapeHTML(p)}</li>`).join("")}</ul>`
     : '<p class="muted">Ingen særlige forhold registreret.</p>';
-
   const html = `
     <p class="ticker">${escapeHTML(a.ticker)}</p>
     <div class="score">${tal(a.score,0)}/100</div>
     <p class="badge">${escapeHTML(a.signal)}</p>
-
-    <div class="section">
-      <h3>Hvad taler for aktien?</h3>
-      ${liste(positive, "positive")}
+    <div class="section"><h3>Hvad taler for aktien?</h3>${liste(positive,"positive")}</div>
+    <div class="section"><h3>Hvad taler imod?</h3>${liste(negative,"negative")}</div>
+    <div class="section"><h3>Tekniske nøgletal</h3>
+      <div class="info-row"><span>Seneste justerede kurs</span><strong>${tal(a.kurs)}</strong></div>
+      <div class="info-row"><span>RSI (14)</span><strong>${tal(a.rsi)}</strong></div>
+      <div class="info-row"><span>Volumen / gennemsnit</span><strong>${tal(a.volumen_ratio)}x</strong></div>
+      <div class="info-row"><span>MACD-kryds</span><strong>${escapeHTML(a.macd_kryds)}</strong></div>
+      <div class="info-row"><span>ATR (14)</span><strong>${tal(a.atr)}</strong></div>
+      <p class="muted small">Foreløbige ATR-baserede niveauer: stop-loss ${tal(a.stop_loss)}, kursmål ${tal(a.kursmaal)}. Disse er baseret på justerede kurser og er ikke direkte handelsordrer.</p>
+      <p class="muted small">Kursdato: ${escapeHTML(a.dato)}</p>
     </div>
-
-    <div class="section">
-      <h3>Hvad taler imod?</h3>
-      ${liste(negative, "negative")}
-    </div>
-
-    <div class="section">
-      <h3>Tekniske nøgletal</h3>
-      <div class="info-row">
-        <span>Seneste justerede kurs</span>
-        <strong>${tal(a.kurs)}</strong>
-      </div>
-      <div class="info-row">
-        <span>RSI (14)</span>
-        <strong>${tal(a.rsi)}</strong>
-      </div>
-      <div class="info-row">
-        <span>Volumen / gennemsnit</span>
-        <strong>${tal(a.volumen_ratio)}x</strong>
-      </div>
-      <div class="info-row">
-        <span>MACD-kryds</span>
-        <strong>${escapeHTML(a.macd_kryds)}</strong>
-      </div>
-      <div class="info-row">
-        <span>ATR (14)</span>
-        <strong>${tal(a.atr)}</strong>
-      </div>
-      <p class="muted small">
-        Foreløbige ATR-baserede niveauer:
-        stop-loss ${tal(a.stop_loss)},
-        kursmål ${tal(a.kursmaal)}.
-        Disse er baseret på justerede kurser
-        og er ikke direkte handelsordrer.
-      </p>
-      <p class="muted small">
-        Kursdato: ${escapeHTML(a.dato)}
-      </p>
-    </div>
-
-    <button class="full" id="nyhedsKnap">
-      📰 Se seneste nyheder
-    </button>
-    <div id="nyhedsIndhold"></div>
-  `;
-
+    <div id="stemningsIndhold" aria-live="polite"></div>
+    <button class="full" id="nyhedsKnap">📰 Se seneste nyheder</button>
+    <div id="nyhedsIndhold" aria-live="polite"></div>`;
   aabn(a.navn, html);
-
-  $("nyhedsKnap").onclick = () => visNyheder(a);
+  const version = popupVersion;
+  $("nyhedsKnap").onclick = () => visNyheder(a, version);
+  visStemning(a.ticker, version);
 }
-
-
-async function visNyheder(a) {
-  const felt = $("nyhedsIndhold");
-  const knap = $("nyhedsKnap");
-
-  knap.disabled = true;
-  felt.innerHTML =
-    '<div class="news">Henter seneste nyheder...</div>';
-
+async function visStemning(ticker, version) {
+  const felt = $("stemningsIndhold");
+  if (!felt) return;
+  felt.textContent = "Henter nyhedsstemning...";
   try {
-    const svar = await fetch(
-      "./data/nyheder.json",
-      { cache: "no-store" }
-    );
-
-    if (!svar.ok) {
-      throw new Error("Kunne ikke hente nyhedsfilen");
-    }
-
+    const svar = await fetch("./data/stemning.json", {cache:"no-store"});
+    if (!svar.ok) throw new Error("HTTP " + svar.status);
     const data = await svar.json();
-
-    const aktieNyheder = data.aktier.find(
-      x => x.ticker === a.ticker
-    );
-
-    if (!aktieNyheder) {
-      throw new Error("Aktien findes ikke i nyhedsdata");
-    }
-
-    if (aktieNyheder.fejl) {
-      throw new Error(
-        "Nyhedshentningen fejlede for denne aktie"
-      );
-    }
-
-    const nyheder = aktieNyheder.nyheder || [];
-
-    if (!nyheder.length) {
-      felt.innerHTML = `
-        <div class="news">
-          Ingen nyheder fundet fra de seneste 7 dage.
-        </div>
-      `;
+    if (version !== popupVersion) return;
+    if (!Array.isArray(data.aktier)) throw new Error("Ugyldige stemningsdata");
+    const aktie = data.aktier.find(a => a.ticker === ticker);
+    if (!aktie || aktie.score === null || !Number.isFinite(aktie.score) || !aktie.antal) {
+      felt.innerHTML = '<div class="section"><h3>Nyhedsstemning</h3><p class="muted small">Ingen nyhedsstemning tilgængelig.</p></div>';
       return;
     }
-
-    let html = `
-      <div class="news">
-        <h3>Seneste nyheder om ${escapeHTML(a.navn)}</h3>
-        <p class="muted small">
-          Overskrifter fra Google News.
-          Tryk på en nyhed for at læse artiklen.
-        </p>
-    `;
-
-    nyheder.forEach(n => {
-      const url = String(n.url || "");
-
-      if (!url.startsWith("https://")) return;
-
-      html += `
-        <div class="section">
-          <a href="${escapeHTML(url)}"
-             target="_blank"
-             rel="noopener noreferrer">
-            <strong>${escapeHTML(n.titel)}</strong>
-          </a>
-          <p class="muted small">
-            ${escapeHTML(n.kilde)} · ${dato(n.dato)}
-          </p>
+    const score = aktie.score;
+    const farve = score > 0 ? "#34d399" : score < 0 ? "#fca5a5" : "#94a3b8";
+    const position = Math.max(0, Math.min(100, (score + 100) / 2));
+    felt.innerHTML = `
+      <div class="section">
+        <h3>Nyhedsstemning</h3>
+        <div class="sentiment-heading"><strong>${escapeHTML(aktie.status)}</strong>
+          <strong style="color:${farve};font-size:22px">${score > 0 ? "+" : ""}${tal(score,0)}</strong>
         </div>
-      `;
-    });
-
-    html += "</div>";
-    felt.innerHTML = html;
-
+        <div class="sentiment-track"><div class="sentiment-marker" style="left:${position}%"></div></div>
+        <div class="sentiment-labels"><span>Negativ</span><span>Neutral</span><span>Positiv</span></div>
+        <p class="muted small">${tal(aktie.positive,0)} positive · ${tal(aktie.neutrale,0)} neutrale · ${tal(aktie.negative,0)} negative overskrifter</p>
+        <p class="muted small">Baseret på ${tal(aktie.antal,0)} nyhedsoverskrifter. Simpel regelbaseret omtaleindikator – ikke en måling af reel markedspanik eller eufori. Påvirker ikke købsscoren.</p>
+        <p class="muted small">Seneste stemningsanalyse: ${escapeHTML(dato(data.genereret))}</p>
+      </div>`;
+  } catch (fejl) {
+    console.error("Stemningsfejl:", fejl);
+    if (version === popupVersion) felt.textContent = "Nyhedsstemning kan ikke hentes lige nu.";
+  }
+}
+async function visNyheder(a, version) {
+  const felt = $("nyhedsIndhold");
+  const knap = $("nyhedsKnap");
+  if (!felt || !knap) return;
+  knap.disabled = true;
+  felt.innerHTML = '<div class="news">Henter seneste nyheder...</div>';
+  try {
+    const svar = await fetch("./data/nyheder.json", {cache:"no-store"});
+    if (!svar.ok) throw new Error("HTTP " + svar.status);
+    const data = await svar.json();
+    if (version !== popupVersion) return;
+    if (!Array.isArray(data.aktier)) throw new Error("Ugyldige nyhedsdata");
+    const aktieNyheder = data.aktier.find(x => x.ticker === a.ticker);
+    if (!aktieNyheder) throw new Error("Aktien findes ikke i nyhedsdata");
+    if (aktieNyheder.fejl) throw new Error("Nyhedshentning fejlede for aktien");
+    const nyheder = Array.isArray(aktieNyheder.nyheder) ? aktieNyheder.nyheder : [];
+    if (!nyheder.length) {
+      felt.innerHTML = '<div class="news">Ingen nyheder fundet fra de seneste 7 dage.</div>';
+      return;
+    }
+    let html = `<div class="news"><h3>Seneste nyheder om ${escapeHTML(a.navn)}</h3>
+      <p class="muted small">Overskrifter fra Google News. Tryk på en nyhed for at læse artiklen.</p>`;
+    for (const n of nyheder) {
+      const url = String(n.url || "");
+      let sikkerUrl;
+      try {
+        const u = new URL(url);
+        if (u.protocol !== "https:") continue;
+        sikkerUrl = u.href;
+      } catch { continue; }
+      html += `<div class="section"><a href="${escapeHTML(sikkerUrl)}" target="_blank" rel="noopener noreferrer"><strong>${escapeHTML(n.titel)}</strong></a>
+        <p class="muted small">${escapeHTML(n.kilde)} · ${escapeHTML(dato(n.dato))}</p></div>`;
+    }
+    felt.innerHTML = html + "</div>";
   } catch (fejl) {
     console.error("Nyhedsfejl:", fejl);
-
-    felt.innerHTML = `
-      <div class="news">
-        <p class="error">
-          Kunne ikke hente nyheder lige nu.
-        </p>
-        <p class="muted small">
-          Prøv igen senere.
-        </p>
-      </div>
-    `;
+    if (version === popupVersion) felt.innerHTML = '<div class="news"><p class="error">Kunne ikke hente nyheder lige nu.</p><p class="muted small">Prøv igen senere.</p></div>';
   } finally {
-    knap.disabled = false;
+    if (version === popupVersion) knap.disabled = false;
   }
 }
-
-
 function visAlle() {
-  const andre = aktier
-    .filter(a => !erKoeb(a))
-    .sort((a,b) => b.score - a.score);
-
-  aabn(
-    "Alle øvrige aktier",
-    `<p class="muted small">
-       ${andre.length} aktier uden bekræftet købssignal.
-       Tryk på en aktie for at se vurderingen.
-     </p>
-     <div id="alleListe"></div>`
-  );
-
-  const container = $("alleListe");
-  andre.forEach(a => container.appendChild(opretKort(a)));
+  const andre = aktier.filter(a => !erKoeb(a)).sort((a,b) => b.score - a.score);
+  aabn("Alle øvrige aktier", `<p class="muted small">${andre.length} aktier uden bekræftet købssignal. Tryk på en aktie for at se vurderingen.</p><div id="alleListe"></div>`);
+  andre.forEach(a => $("alleListe").appendChild(opretKort(a)));
 }
-
 function visMetode() {
   aabn("Hvordan analyserer StockRadar?", `
-    <p>
-      StockRadar scanner 19 danske og amerikanske aktier
-      og giver hver aktie en teknisk score fra 0 til 100.
-    </p>
-    <p class="muted small">
-      Modellen er udviklet til kortsigtet screening,
-      men er endnu ikke backtestet.
-    </p>
-
-    <div class="section">
-      <h3>1. Kursens trend – op til 55 point</h3>
-      <p>
-        Vi bruger EMA20, EMA50 og EMA200.
-        En aktie belønnes, når kursen ligger over
-        sine glidende gennemsnit, og når EMA20
-        ligger over EMA50.
-      </p>
-    </div>
-
-    <div class="section">
-      <h3>2. MACD – op til 20 point</h3>
-      <p>
-        MACD bruges til at måle momentum.
-        Vi giver point, når MACD ligger over
-        signallinjen, og ekstra point ved
-        et nyt positivt MACD-kryds.
-      </p>
-    </div>
-
-    <div class="section">
-      <h3>3. RSI – op til 15 point</h3>
-      <p>
-        RSI måler styrken i de seneste kursbevægelser.
-        RSI mellem 45 og 65 giver 15 point,
-        mens RSI fra 35 til under 45 giver 8 point.
-        Meget høj RSI kan indikere overkøb.
-      </p>
-    </div>
-
-    <div class="section">
-      <h3>4. Handelsvolumen – op til 10 point</h3>
-      <p>
-        Vi sammenligner dagens volumen med
-        gennemsnittet over 20 handelsdage.
-        Ekstra point gives kun, når kursen stiger
-        og ligger over EMA20.
-      </p>
-    </div>
-
-    <div class="section">
-      <h3>5. Risiko – ATR (14)</h3>
-      <p>
-        ATR måler aktiens normale kursudsving.
-        Vi beregner foreløbige niveauer med
-        stop-loss 2 × ATR under kursen og
-        kursmål 3 × ATR over kursen.
-        ATR påvirker ikke selve scoren.
-      </p>
-    </div>
-
-    <div class="section">
-      <h3>Hvordan opstår et købssignal?</h3>
-      <p>
-        En aktie får signalet
-        <strong>Stærk købskandidat</strong>,
-        når alle disse betingelser er opfyldt:
-      </p>
-      <ul>
-        <li>Teknisk score på mindst 80 point.</li>
-        <li>Positiv trend med volumenbekræftelse.</li>
-        <li>Intet nyt negativt MACD-kryds.</li>
-      </ul>
-      <p>
-        En score på mindst 65 point uden nyt negativt
-        MACD-kryds giver normalt "Hold øje".
-        En score på mindst 40 giver "Afvent".
-        Ellers vises "Svagt teknisk billede".
-      </p>
-    </div>
-
-    <div class="section">
-      <h3>Hvad indgår endnu ikke?</h3>
-      <p>
-        Fundamentale regnskabstal, nyhedsstemning,
-        sociale medier og hype/panik indgår endnu
-        ikke i den tekniske score.
-      </p>
-      <p class="muted small">
-        Scoren er en regelbaseret indikator,
-        ikke en sandsynlighed for gevinst.
-        Modellen skal backtestes, og datakvalitet
-        samt afsluttede handelsdage skal valideres,
-        før signalerne kan bruges som et mere
-        pålideligt beslutningsgrundlag.
-      </p>
-    </div>
-  `);
+    <p>StockRadar scanner 19 danske og amerikanske aktier og giver hver aktie en teknisk score fra 0 til 100.</p>
+    <p class="muted small">Modellen er udviklet til kortsigtet screening, men er endnu ikke backtestet.</p>
+    <div class="section"><h3>1. Kursens trend – op til 55 point</h3><p>Vi bruger EMA20, EMA50 og EMA200. En aktie belønnes, når kursen ligger over sine glidende gennemsnit, og når EMA20 ligger over EMA50.</p></div>
+    <div class="section"><h3>2. MACD – op til 20 point</h3><p>MACD bruges til at måle momentum. Vi giver point, når MACD ligger over signallinjen, og ekstra point ved et nyt positivt MACD-kryds.</p></div>
+    <div class="section"><h3>3. RSI – op til 15 point</h3><p>RSI måler styrken i de seneste kursbevægelser. RSI mellem 45 og 65 giver 15 point, mens RSI fra 35 til under 45 giver 8 point. Meget høj RSI kan indikere overkøb.</p></div>
+    <div class="section"><h3>4. Handelsvolumen – op til 10 point</h3><p>Vi sammenligner dagens volumen med gennemsnittet over 20 handelsdage. Ekstra point gives kun, når kursen stiger og ligger over EMA20.</p></div>
+    <div class="section"><h3>5. Risiko – ATR (14)</h3><p>ATR måler aktiens normale kursudsving. Vi beregner foreløbige niveauer med stop-loss 2 × ATR under kursen og kursmål 3 × ATR over kursen. ATR påvirker ikke selve scoren.</p></div>
+    <div class="section"><h3>Hvordan opstår et købssignal?</h3><p>En aktie får signalet <strong>Stærk købskandidat</strong>, når alle disse betingelser er opfyldt:</p>
+      <ul><li>Teknisk score på mindst 80 point.</li><li>Positiv trend med volumenbekræftelse.</li><li>Intet nyt negativt MACD-kryds.</li></ul>
+      <p>En score på mindst 65 point uden nyt negativt MACD-kryds giver normalt "Hold øje". En score på mindst 40 giver "Afvent". Ellers vises "Svagt teknisk billede".</p></div>
+    <div class="section"><h3>Nyhedsstemning</h3><p>Vi klassificerer op til fem nylige Google News-overskrifter pr. aktie som positive, neutrale eller negative ved hjælp af finansielle nøgleord. Scoren er (positive minus negative) divideret med antal overskrifter, ganget med 100.</p>
+      <p>Det er en grov måling af overskrifternes ordvalg, ikke en analyse af hele artikler eller faktisk investorstemning. Den indgår ikke i den tekniske købsscore.</p></div>
+    <div class="section"><h3>Hvad indgår endnu ikke?</h3><p>Fundamentale regnskabstal og sociale mediers hype/panik indgår endnu ikke i købsscoren.</p>
+      <p class="muted small">Scoren er en regelbaseret indikator, ikke en sandsynlighed for gevinst. Modellen skal backtestes, og datakvalitet samt afsluttede handelsdage skal valideres, før signalerne kan bruges som et mere pålideligt beslutningsgrundlag.</p></div>`);
 }
-
 async function hentData() {
   try {
-    const svar = await fetch(
-      "./data/aktier.json",
-      { cache: "no-store" }
-    );
-
-    if (!svar.ok) {
-      throw new Error("HTTP " + svar.status);
-    }
-
+    const svar = await fetch("./data/aktier.json", {cache:"no-store"});
+    if (!svar.ok) throw new Error("HTTP " + svar.status);
     const data = await svar.json();
-
-    if (
-      !Array.isArray(data.aktier) ||
-      data.aktier.length !== 19 ||
-      data.aktier.some(a =>
-        !a.ticker || !a.navn ||
-        !a.signal || !Number.isFinite(a.score)
-      )
-    ) {
+    if (!Array.isArray(data.aktier) || data.aktier.length !== 19 || data.aktier.some(a =>
+      !a.ticker || !a.navn || !a.signal || !Number.isFinite(a.score))) {
       throw new Error("Ufuldstændige analysedata");
     }
-
     aktier = data.aktier;
     genereret = data.genereret;
-
-    $("status").textContent =
-      "Seneste opdatering: " + dato(genereret) +
-      " · " + aktier.length + " aktier";
-
+    $("status").textContent = "Seneste opdatering: " + dato(genereret) + " · " + aktier.length + " aktier";
     visForside();
-
   } catch (fejl) {
     console.error("StockRadar datafejl:", fejl);
-
-    $("status").textContent =
-      "Kunne ikke hente de seneste aktiedata.";
-
-    $("kandidater").innerHTML = `
-      <div class="card">
-        <strong class="error">Data ikke tilgængelige</strong>
-        <p class="muted">
-          Prøv at genindlæse siden lidt senere.
-          Der vises ingen demonstrationssignaler.
-        </p>
-      </div>
-    `;
+    $("status").textContent = "Kunne ikke hente de seneste aktiedata.";
+    $("kandidater").innerHTML = '<div class="card"><strong class="error">Data ikke tilgængelige</strong><p class="muted">Prøv at genindlæse siden lidt senere. Der vises ingen demonstrationssignaler.</p></div>';
   }
 }
-
 hentData();
 </script>
 </body>
