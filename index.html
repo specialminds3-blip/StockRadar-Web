@@ -391,28 +391,101 @@ function visAktie(ticker) {
   $("nyhedsKnap").onclick = () => visNyheder(a);
 }
 
-function visNyheder(a) {
-  const soegning = encodeURIComponent(
-    '"' + a.navn + '" aktie stock'
-  );
 
-  const url =
-    "https://news.google.com/search?q=" + soegning;
+async function visNyheder(a) {
+  const felt = $("nyhedsIndhold");
+  const knap = $("nyhedsKnap");
 
-  $("nyhedsIndhold").innerHTML = `
-    <div class="news">
-      <strong>Nyheder om ${escapeHTML(a.navn)}</strong>
-      <p class="muted small">
-        Nyheder åbnes foreløbig hos Google News.
-        Direkte nyhedsoverskrifter kommer senere.
-      </p>
-      <a href="${url}" target="_blank"
-         rel="noopener noreferrer">
-        Åbn seneste nyheder ↗
-      </a>
-    </div>
-  `;
+  knap.disabled = true;
+  felt.innerHTML =
+    '<div class="news">Henter seneste nyheder...</div>';
+
+  try {
+    const svar = await fetch(
+      "./data/nyheder.json",
+      { cache: "no-store" }
+    );
+
+    if (!svar.ok) {
+      throw new Error("Kunne ikke hente nyhedsfilen");
+    }
+
+    const data = await svar.json();
+
+    const aktieNyheder = data.aktier.find(
+      x => x.ticker === a.ticker
+    );
+
+    if (!aktieNyheder) {
+      throw new Error("Aktien findes ikke i nyhedsdata");
+    }
+
+    if (aktieNyheder.fejl) {
+      throw new Error(
+        "Nyhedshentningen fejlede for denne aktie"
+      );
+    }
+
+    const nyheder = aktieNyheder.nyheder || [];
+
+    if (!nyheder.length) {
+      felt.innerHTML = `
+        <div class="news">
+          Ingen nyheder fundet fra de seneste 7 dage.
+        </div>
+      `;
+      return;
+    }
+
+    let html = `
+      <div class="news">
+        <h3>Seneste nyheder om ${escapeHTML(a.navn)}</h3>
+        <p class="muted small">
+          Overskrifter fra Google News.
+          Tryk på en nyhed for at læse artiklen.
+        </p>
+    `;
+
+    nyheder.forEach(n => {
+      const url = String(n.url || "");
+
+      if (!url.startsWith("https://")) return;
+
+      html += `
+        <div class="section">
+          <a href="${escapeHTML(url)}"
+             target="_blank"
+             rel="noopener noreferrer">
+            <strong>${escapeHTML(n.titel)}</strong>
+          </a>
+          <p class="muted small">
+            ${escapeHTML(n.kilde)} · ${dato(n.dato)}
+          </p>
+        </div>
+      `;
+    });
+
+    html += "</div>";
+    felt.innerHTML = html;
+
+  } catch (fejl) {
+    console.error("Nyhedsfejl:", fejl);
+
+    felt.innerHTML = `
+      <div class="news">
+        <p class="error">
+          Kunne ikke hente nyheder lige nu.
+        </p>
+        <p class="muted small">
+          Prøv igen senere.
+        </p>
+      </div>
+    `;
+  } finally {
+    knap.disabled = false;
+  }
 }
+
 
 function visAlle() {
   const andre = aktier
