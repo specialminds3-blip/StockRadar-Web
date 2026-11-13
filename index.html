@@ -2,10 +2,10 @@
 <html lang="da">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#00ff41">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="apple-mobile-web-app-title" content="StockRadar">
 <link rel="manifest" href="./manifest.json">
 <link rel="icon" type="image/png" sizes="192x192" href="./icons/radar-192.png">
@@ -60,6 +60,47 @@ li { margin-bottom:7px; }
 .sentiment-marker { position:absolute; top:-5px; width:4px; height:22px; background:white; border-radius:3px; transform:translateX(-50%); }
 .sentiment-labels { display:flex; justify-content:space-between; gap:8px; font-size:11px; color:#94a3b8; }
 .sentiment-heading { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+
+/* Mobil/PWA: hold alt under statuslinjen og inde i skærmen. */
+html { width:100%; height:100%; overflow:hidden; overscroll-behavior:none; }
+body { width:100%; height:100%; height:100dvh; overflow:hidden; overscroll-behavior:none; }
+main {
+  height:100%; height:100dvh; max-width:650px;
+  padding:calc(env(safe-area-inset-top, 0px) + 12px) 16px calc(env(safe-area-inset-bottom, 0px) + 10px);
+  display:flex; flex-direction:column; min-height:0; gap:0;
+}
+.header { margin-bottom:8px; flex:none; }
+.header-top { justify-content:center; }
+.brand { width:100%; justify-content:center; gap:16px; }
+.brand h1 { font-size:clamp(32px, 9vw, 46px); line-height:1.1; letter-spacing:.2px; }
+.radar-logo { width:clamp(58px, 17vw, 82px); height:clamp(58px, 17vw, 82px); }
+.header-sub { display:flex; justify-content:space-between; align-items:center; gap:8px; }
+.header-sub .subtitle { margin:4px 0; font-size:clamp(11px, 3vw, 14px); }
+.header-sub button { padding:7px 10px; flex:none; }
+.market-area { flex:1 1 auto; min-height:0; display:flex; flex-direction:column; }
+.market-area #status { margin:2px 0 4px; font-size:11px; flex:none; }
+.market-area h2,.video-area h2 { margin:4px 0 7px; font-size:clamp(15px,4vw,19px); flex:none; }
+#kandidater { min-height:0; flex:1 1 auto; overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; }
+#kandidater .card { padding:10px 12px; margin-bottom:7px; }
+#kandidater .score { font-size:19px; }
+#kandidater .ticker,#kandidater .badge { margin-top:2px; }
+#alleKnap { flex:none; margin-top:6px; padding:9px 12px; }
+.video-area { flex:none; margin-top:8px; }
+.video-frame { width:100%; aspect-ratio:16/9; max-height: min(28dvh, 240px); background:#000; border-radius:10px; overflow:hidden; }
+.video-frame iframe { width:100%; height:100%; display:block; border:0; }
+.disclaimer { margin:5px 0 0; font-size:10px; line-height:1.25; }
+.overlay { padding:calc(env(safe-area-inset-top, 0px) + 12px) 12px calc(env(safe-area-inset-bottom, 0px) + 12px); }
+.modal { max-height:100%; }
+@media (max-height:740px) {
+  main { padding-top:calc(env(safe-area-inset-top, 0px) + 6px); padding-bottom:calc(env(safe-area-inset-bottom, 0px) + 5px); }
+  .radar-logo { width:52px; height:52px; }
+  .brand h1 { font-size:32px; }
+  .header { margin-bottom:3px; }
+  .video-area { margin-top:4px; }
+  .video-frame { max-height:23dvh; }
+  .disclaimer { display:none; }
+}
+@media (max-height:570px) { .video-frame { max-height:18dvh; } .header-sub .subtitle { font-size:11px; } }
 </style>
 </head>
 <body>
@@ -67,15 +108,20 @@ li { margin-bottom:7px; }
   <div class="header">
     <div class="header-top">
       <div class="brand"><span class="radar-logo" aria-hidden="true"><span class="radar-sweep"></span><span class="radar-dot"></span></span><h1>StockRadar</h1></div>
-      <button class="secondary" onclick="visMetode()">Analyse?</button>
     </div>
-    <p class="subtitle">Dagens aktiesignaler · Danmark og USA</p>
+    <div class="header-sub"><p class="subtitle">Dagens aktiesignaler · Danmark og USA</p><button class="secondary" onclick="visMetode()">Analyse?</button></div>
   </div>
-  <p class="muted small" id="status">Henter seneste analyser...</p>
-  <h2>Dagens købskandidater</h2>
-  <div id="kandidater"></div>
-  <button class="full" id="alleKnap" onclick="visAlle()" disabled>Se alle aktier på listen</button>
-  <p class="muted small" style="margin-top:20px">StockRadar anvender eksperimentelle tekniske signaler. Ikke personlig investeringsrådgivning. Historiske signaler garanterer ikke fremtidige afkast.</p>
+  <section class="market-area">
+    <p class="muted small" id="status">Henter seneste analyser...</p>
+    <h2>Dagens købskandidater</h2>
+    <div id="kandidater"></div>
+    <button class="full" id="alleKnap" onclick="visAlle()" disabled>Se alle aktier på listen</button>
+  </section>
+  <section class="video-area" aria-label="Markedsvideo">
+    <h2>Markedsvideo</h2>
+    <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/Rj26POP0JWo?playsinline=1" title="StockRadar – markedsvideo" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+    <p class="muted small disclaimer">Eksperimentelle signaler – ikke personlig investeringsrådgivning.</p>
+  </section>
 </main>
 <div class="overlay" id="overlay" onclick="lukVedBaggrund(event)">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitel">
