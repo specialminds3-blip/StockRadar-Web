@@ -1,1 +1,318 @@
 
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1">
+<title>StockRadar</title>
+<style>
+:root {
+  color-scheme: dark;
+  font-family: Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #0d1726;
+  color: #f1f5f9;
+}
+main {
+  max-width: 650px;
+  margin: auto;
+  padding: 25px 16px;
+}
+h1 { margin: 0; font-size: 32px; }
+h2 { font-size: 19px; }
+.subtitle { color: #94a3b8; }
+.header { margin-bottom: 30px; }
+.card {
+  background: #19283c;
+  border: 1px solid #304157;
+  padding: 18px;
+  border-radius: 13px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.card:hover { border-color: #38bdf8; }
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.score {
+  color: #34d399;
+  font-size: 23px;
+  font-weight: bold;
+}
+.ticker {
+  color: #94a3b8;
+  font-size: 13px;
+  margin-top: 5px;
+}
+button {
+  background: #2563eb;
+  color: white;
+  border: 0;
+  border-radius: 9px;
+  padding: 13px 16px;
+  cursor: pointer;
+  font-size: 15px;
+}
+button:hover { background: #1d4ed8; }
+.full { width: 100%; margin-top: 20px; }
+.muted { color: #94a3b8; }
+.badge {
+  color: #fbbf24;
+  font-size: 12px;
+}
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #000b;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.modal {
+  background: #19283c;
+  border-radius: 16px;
+  padding: 22px;
+  width: 100%;
+  max-width: 550px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+.modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.close {
+  background: #334155;
+  padding: 8px 12px;
+}
+.news {
+  margin-top: 15px;
+  padding: 14px;
+  background: #0d1726;
+  border-radius: 10px;
+}
+a { color: #7dd3fc; }
+</style>
+</head>
+<body>
+
+<main>
+  <div class="header">
+    <h1>StockRadar 📈</h1>
+    <p class="subtitle">
+      Dagens aktiesignaler · Danmark og USA
+    </p>
+  </div>
+
+  <p class="muted" id="dato"></p>
+
+  <h2>Dagens købskandidater</h2>
+  <div id="kandidater"></div>
+
+  <button class="full" onclick="visAlle()">
+    Se alle aktier på listen
+  </button>
+
+  <p class="muted" style="font-size:12px">
+    Eksperimentelle tekniske signaler.
+    Ikke personlig investeringsrådgivning.
+  </p>
+</main>
+
+<div class="overlay" id="overlay"
+     onclick="lukVedBaggrund(event)">
+  <div class="modal">
+    <div class="modal-head">
+      <h2 id="modalTitel"></h2>
+      <button class="close" onclick="luk()">✕</button>
+    </div>
+    <div id="modalIndhold"></div>
+  </div>
+</div>
+
+<script>
+// DEMODATA – erstattes senere med StockRadars JSON
+const aktier = [
+  {
+    ticker: "AAPL",
+    navn: "Apple",
+    score: 80,
+    signal: "Hold øje",
+    rsi: 61.8,
+    forklaring:
+      "Positiv teknisk trend, men volumen er endnu ikke " +
+      "stærk nok til at bekræfte et købssignal."
+  },
+  {
+    ticker: "PNDORA.CO",
+    navn: "Pandora",
+    score: 80,
+    signal: "Hold øje",
+    rsi: 63.76,
+    forklaring:
+      "Kursen viser styrke, men der mangler " +
+      "bekræftelse fra handelsvolumen."
+  },
+  {
+    ticker: "AMZN",
+    navn: "Amazon",
+    score: 80,
+    signal: "Hold øje",
+    rsi: 56.25,
+    forklaring:
+      "Positiv kursudvikling og moderat RSI. " +
+      "Afventer højere handelsaktivitet."
+  },
+  {
+    ticker: "TSLA",
+    navn: "Tesla",
+    score: 70,
+    signal: "Hold øje",
+    rsi: 54.05,
+    forklaring:
+      "Flere tekniske indikatorer er positive, " +
+      "men der er endnu ikke et stærkt købssignal."
+  },
+  {
+    ticker: "AMBU-B.CO",
+    navn: "Ambu",
+    score: 70,
+    signal: "Hold øje",
+    rsi: 75.63,
+    forklaring:
+      "Positiv trend og volumenbekræftelse, " +
+      "men RSI er relativt høj."
+  }
+];
+
+document.getElementById("dato").textContent =
+  new Date().toLocaleDateString("da-DK", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
+
+function visForside() {
+  const container = document.getElementById("kandidater");
+  container.innerHTML = "";
+
+  const anbefalede = aktier.filter(
+    a => a.signal === "Stærk købskandidat"
+  );
+
+  if (!anbefalede.length) {
+    container.innerHTML =
+      '<div class="card" style="cursor:default">' +
+      '<strong>Ingen bekræftede købssignaler</strong>' +
+      '<p class="muted">StockRadar afventer stærkere ' +
+      'tekniske signaler.</p></div>';
+  }
+
+  anbefalede.forEach(a => {
+    const kort = document.createElement("div");
+    kort.className = "card";
+    kort.innerHTML =
+      '<div class="card-top"><strong>' +
+      a.navn + '</strong><span class="score">' +
+      a.score + '/100</span></div>' +
+      '<div class="ticker">' + a.ticker + '</div>';
+
+    kort.onclick = () => visAktie(a);
+    container.appendChild(kort);
+  });
+}
+
+function aabn() {
+  document.getElementById("overlay").style.display = "flex";
+}
+
+function luk() {
+  document.getElementById("overlay").style.display = "none";
+}
+
+function lukVedBaggrund(event) {
+  if (event.target.id === "overlay") luk();
+}
+
+function visAktie(a) {
+  document.getElementById("modalTitel").textContent =
+    a.navn;
+
+  document.getElementById("modalIndhold").innerHTML =
+    '<p class="ticker">' + a.ticker + '</p>' +
+    '<p class="score">' + a.score + '/100</p>' +
+    '<p class="badge">' + a.signal + '</p>' +
+    '<h3>Hvorfor denne vurdering?</h3>' +
+    '<p>' + a.forklaring + '</p>' +
+    '<p class="muted">RSI: ' + a.rsi + '</p>' +
+    '<button class="full" onclick="visNyheder(\'' +
+    a.ticker + '\')">Se seneste nyheder</button>' +
+    '<div id="nyhedsIndhold"></div>';
+
+  aabn();
+}
+
+function visNyheder(ticker) {
+  const felt = document.getElementById("nyhedsIndhold");
+
+  // Midlertidig løsning indtil nyhedsdata tilkobles
+  const soegning = encodeURIComponent(
+    ticker + " stock"
+  );
+
+  felt.innerHTML =
+    '<div class="news">' +
+    '<p>Seneste nyheder kan åbnes hos Google News.</p>' +
+    '<a href="https://news.google.com/search?q=' +
+    soegning +
+    '" target="_blank" rel="noopener noreferrer">' +
+    'Åbn nyheder om aktien ↗</a>' +
+    '</div>';
+}
+
+function visAlle() {
+  document.getElementById("modalTitel").textContent =
+    "Alle aktier";
+
+  const container = document.getElementById("modalIndhold");
+  container.innerHTML = "";
+
+  aktier
+    .filter(a => a.signal !== "Stærk købskandidat")
+    .sort((a, b) => b.score - a.score)
+    .forEach(a => {
+      const kort = document.createElement("div");
+      kort.className = "card";
+
+      kort.innerHTML =
+        '<div class="card-top"><strong>' +
+        a.navn + '</strong><span class="score">' +
+        a.score + '/100</span></div>' +
+        '<div class="ticker">' + a.signal + '</div>';
+
+      kort.onclick = () => visAktie(a);
+      container.appendChild(kort);
+    });
+
+  aabn();
+}
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") luk();
+});
+
+visForside();
+</script>
+</body>
+</html>
+
