@@ -1,20 +1,20 @@
 {
-  "genereret": "2026-11-13T20:56:48.961047+00:00",
+  "genereret": "2026-11-13T21:00:36.296013+00:00",
   "antal": 19,
   "aktier": [
     {
       "ticker": "AAPL",
       "navn": "Apple",
       "dato": "2026-11-13",
-      "kurs": 356.18,
+      "kurs": 356.27,
       "score": 80,
       "signal": "Hold øje",
-      "rsi": 60.84,
+      "rsi": 60.9,
       "atr": 8.21,
-      "volumen_ratio": 0.57,
+      "volumen_ratio": 0.72,
       "macd_kryds": "Intet nyt kryds",
-      "stop_loss": 339.75,
-      "kursmaal": 380.81,
+      "stop_loss": 339.85,
+      "kursmaal": 380.9,
       "forklaring": {
         "positive": [
           "Kursen ligger over EMA20.",
@@ -35,7 +35,7 @@
       "signal": "Hold øje",
       "rsi": 63.76,
       "atr": 28.87,
-      "volumen_ratio": 0.41,
+      "volumen_ratio": 0.4,
       "macd_kryds": "Intet nyt kryds",
       "stop_loss": 875.26,
       "kursmaal": 1019.6,
@@ -54,15 +54,15 @@
       "ticker": "AMZN",
       "navn": "Amazon",
       "dato": "2026-11-13",
-      "kurs": 266.41,
+      "kurs": 266.66,
       "score": 80,
       "signal": "Hold øje",
-      "rsi": 57.2,
+      "rsi": 57.43,
       "atr": 9.07,
-      "volumen_ratio": 0.42,
+      "volumen_ratio": 0.57,
       "macd_kryds": "Intet nyt kryds",
-      "stop_loss": 248.26,
-      "kursmaal": 293.63,
+      "stop_loss": 248.51,
+      "kursmaal": 293.88,
       "forklaring": {
         "positive": [
           "Kursen ligger over EMA20.",
@@ -78,15 +78,15 @@
       "ticker": "TSLA",
       "navn": "Tesla",
       "dato": "2026-11-13",
-      "kurs": 390.96,
+      "kurs": 390.22,
       "score": 70,
       "signal": "Hold øje",
-      "rsi": 53.83,
+      "rsi": 53.54,
       "atr": 16.71,
-      "volumen_ratio": 0.69,
+      "volumen_ratio": 0.78,
       "macd_kryds": "Intet nyt kryds",
-      "stop_loss": 357.55,
-      "kursmaal": 441.09,
+      "stop_loss": 356.8,
+      "kursmaal": 440.35,
       "forklaring": {
         "positive": [
           "Kursen ligger over EMA20.",
@@ -171,25 +171,25 @@
       }
     },
     {
-      "ticker": "AMD",
-      "navn": "AMD",
+      "ticker": "DSV.CO",
+      "navn": "DSV",
       "dato": "2026-11-13",
-      "kurs": 537.53,
+      "kurs": 1482.5,
       "score": 65,
       "signal": "Hold øje",
-      "rsi": 50.78,
-      "atr": 41.94,
-      "volumen_ratio": 1.26,
+      "rsi": 70.12,
+      "atr": 38.61,
+      "volumen_ratio": 0.67,
       "macd_kryds": "Intet nyt kryds",
-      "stop_loss": 453.66,
-      "kursmaal": 663.34,
+      "stop_loss": 1405.27,
+      "kursmaal": 1598.34,
       "forklaring": {
         "positive": [
           "Kursen ligger over EMA20.",
-          "Kursen ligger over EMA50.",
-          "RSI viser moderat positivt momentum."
+          "Kursen ligger over EMA50."
         ],
         "negative": [
+          "RSI er over 70, hvilket kan indikere en overkøbt aktie.",
           "Der mangler volumenbekræftelse."
         ]
       }
@@ -219,54 +219,6 @@
       }
     },
     {
-      "ticker": "DSV.CO",
-      "navn": "DSV",
-      "dato": "2026-11-13",
-      "kurs": 1482.5,
-      "score": 65,
-      "signal": "Hold øje",
-      "rsi": 70.12,
-      "atr": 38.61,
-      "volumen_ratio": 0.67,
-      "macd_kryds": "Intet nyt kryds",
-      "stop_loss": 1405.27,
-      "kursmaal": 1598.34,
-      "forklaring": {
-        "positive": [
-          "Kursen ligger over EMA20.",
-          "Kursen ligger over EMA50."
-        ],
-        "negative": [
-          "RSI er over 70, hvilket kan indikere en overkøbt aktie.",
-          "Der mangler volumenbekræftelse."
-        ]
-      }
-    },
-    {
-      "ticker": "MSFT",
-      "navn": "Microsoft",
-      "dato": "2026-11-13",
-      "kurs": 523.95,
-      "score": 55,
-      "signal": "Afvent",
-      "rsi": 48.85,
-      "atr": 15.22,
-      "volumen_ratio": 0.62,
-      "macd_kryds": "Intet nyt kryds",
-      "stop_loss": 493.52,
-      "kursmaal": 569.6,
-      "forklaring": {
-        "positive": [
-          "Kursen ligger over EMA50.",
-          "RSI viser moderat positivt momentum."
-        ],
-        "negative": [
-          "Kursen ligger under EMA20.",
-          "Der mangler volumenbekræftelse."
-        ]
-      }
-    },
-    {
       "ticker": "NOVO-B.CO",
       "navn": "Novo Nordisk",
       "dato": "2026-11-13",
@@ -286,6 +238,54 @@
           "RSI viser moderat positivt momentum."
         ],
         "negative": [
+          "Der mangler volumenbekræftelse."
+        ]
+      }
+    },
+    {
+      "ticker": "MSFT",
+      "navn": "Microsoft",
+      "dato": "2026-11-13",
+      "kurs": 523.88,
+      "score": 55,
+      "signal": "Afvent",
+      "rsi": 48.82,
+      "atr": 15.22,
+      "volumen_ratio": 0.83,
+      "macd_kryds": "Intet nyt kryds",
+      "stop_loss": 493.45,
+      "kursmaal": 569.53,
+      "forklaring": {
+        "positive": [
+          "Kursen ligger over EMA50.",
+          "RSI viser moderat positivt momentum."
+        ],
+        "negative": [
+          "Kursen ligger under EMA20.",
+          "Der mangler volumenbekræftelse."
+        ]
+      }
+    },
+    {
+      "ticker": "AMD",
+      "navn": "AMD",
+      "dato": "2026-11-13",
+      "kurs": 534.06,
+      "score": 50,
+      "signal": "Afvent",
+      "rsi": 50.36,
+      "atr": 41.94,
+      "volumen_ratio": 1.38,
+      "macd_kryds": "Intet nyt kryds",
+      "stop_loss": 450.19,
+      "kursmaal": 659.87,
+      "forklaring": {
+        "positive": [
+          "Kursen ligger over EMA20.",
+          "RSI viser moderat positivt momentum."
+        ],
+        "negative": [
+          "Kursen ligger under EMA50.",
           "Der mangler volumenbekræftelse."
         ]
       }
@@ -342,15 +342,15 @@
       "ticker": "META",
       "navn": "Meta",
       "dato": "2026-11-13",
-      "kurs": 641.35,
+      "kurs": 641.69,
       "score": 35,
       "signal": "Svagt teknisk billede",
-      "rsi": 47.71,
+      "rsi": 47.8,
       "atr": 22.78,
-      "volumen_ratio": 0.54,
+      "volumen_ratio": 0.62,
       "macd_kryds": "Intet nyt kryds",
-      "stop_loss": 595.79,
-      "kursmaal": 709.69,
+      "stop_loss": 596.13,
+      "kursmaal": 710.03,
       "forklaring": {
         "positive": [
           "RSI viser moderat positivt momentum."
@@ -366,15 +366,15 @@
       "ticker": "ORCL",
       "navn": "Oracle",
       "dato": "2026-11-13",
-      "kurs": 125.35,
+      "kurs": 125.37,
       "score": 25,
       "signal": "Svagt teknisk billede",
-      "rsi": 47.17,
+      "rsi": 47.19,
       "atr": 8.07,
-      "volumen_ratio": 0.44,
+      "volumen_ratio": 0.46,
       "macd_kryds": "Intet nyt kryds",
-      "stop_loss": 109.22,
-      "kursmaal": 149.55,
+      "stop_loss": 109.24,
+      "kursmaal": 149.57,
       "forklaring": {
         "positive": [
           "RSI viser moderat positivt momentum."
@@ -412,15 +412,15 @@
       "ticker": "GOOGL",
       "navn": "Alphabet",
       "dato": "2026-11-13",
-      "kurs": 295.5,
+      "kurs": 295.77,
       "score": 18,
       "signal": "Svagt teknisk billede",
-      "rsi": 40.43,
+      "rsi": 40.58,
       "atr": 10.29,
-      "volumen_ratio": 0.6,
+      "volumen_ratio": 0.72,
       "macd_kryds": "Intet nyt kryds",
-      "stop_loss": 274.92,
-      "kursmaal": 326.38,
+      "stop_loss": 275.19,
+      "kursmaal": 326.65,
       "forklaring": {
         "positive": [],
         "negative": [
@@ -434,15 +434,15 @@
       "ticker": "NVDA",
       "navn": "NVIDIA",
       "dato": "2026-11-13",
-      "kurs": 162.84,
+      "kurs": 162.85,
       "score": 0,
       "signal": "Svagt teknisk billede",
       "rsi": 24.86,
       "atr": 9.98,
-      "volumen_ratio": 1.61,
+      "volumen_ratio": 1.71,
       "macd_kryds": "Intet nyt kryds",
-      "stop_loss": 142.88,
-      "kursmaal": 192.78,
+      "stop_loss": 142.89,
+      "kursmaal": 192.79,
       "forklaring": {
         "positive": [],
         "negative": [
