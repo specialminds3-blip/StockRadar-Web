@@ -1,24 +1,22 @@
 {
-  "genereret": "2026-11-22T01:11:11.023004+00:00",
+  "genereret": "2026-11-23T01:17:40.889900+00:00",
   "metode": "Regelbaseret analyse af overskrifter",
   "aktier": [
     {
       "ticker": "NOVO-B.CO",
       "navn": "Novo Nordisk",
-      "score": 40,
+      "score": 20,
       "status": "Forsigtig optimisme",
       "antal": 5,
-      "positive": 2,
+      "positive": 1,
       "negative": 0,
-      "neutrale": 3,
+      "neutrale": 4,
       "nyheder": [
         {
-          "titel": "Novo Nordisk (NVO) Stock May Be Undervalued On Raised 2026 Outlook - Yahoo Finance",
-          "kategori": "positiv",
-          "netto": 1,
-          "positive_ord": [
-            "undervalued"
-          ],
+          "titel": "Novo Nordisk A/S (NOVO-B.CO) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+          "kategori": "neutral",
+          "netto": 0,
+          "positive_ord": [],
           "negative_ord": []
         },
         {
@@ -80,13 +78,6 @@
           "negative_ord": []
         },
         {
-          "titel": "Vestas Wind Systems A/S falls 4.54% in Friday's session - Global Banking & Finance Review",
-          "kategori": "neutral",
-          "netto": 0,
-          "positive_ord": [],
-          "negative_ord": []
-        },
-        {
           "titel": "Vestas Wind A/S : Transactions in connection with share buy-back programme 12-18 November 2026 - www.marketscreener.com",
           "kategori": "neutral",
           "netto": 0,
@@ -95,6 +86,13 @@
         },
         {
           "titel": "Earnings Miss: Vestas Wind Systems A/S Missed EPS By 14% And Analysts Are Revising Their Forecasts - Simply Wall St",
+          "kategori": "neutral",
+          "netto": 0,
+          "positive_ord": [],
+          "negative_ord": []
+        },
+        {
+          "titel": "Vestas plans to cut 180 jobs in Denmark - Marketwire - www.marketscreener.com",
           "kategori": "neutral",
           "netto": 0,
           "positive_ord": [],
@@ -113,6 +111,20 @@
       "neutrale": 5,
       "nyheder": [
         {
+          "titel": "Ørsted A/S (ORSTED.CO) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+          "kategori": "neutral",
+          "netto": 0,
+          "positive_ord": [],
+          "negative_ord": []
+        },
+        {
+          "titel": "Ørsted A/s Stock Price Forecast. Should You Buy ORSTED.CO? - StockInvest.us",
+          "kategori": "neutral",
+          "netto": 0,
+          "positive_ord": [],
+          "negative_ord": []
+        },
+        {
           "titel": "Orsted A/S : Ørsted wins The Earthshot Prize 2026 for its renewable energy transformation - www.marketscreener.com",
           "kategori": "neutral",
           "netto": 0,
@@ -127,21 +139,7 @@
           "negative_ord": []
         },
         {
-          "titel": "Enlight Renewable Energy And 2 Other Top Clean Energy Stocks - Yahoo Finance",
-          "kategori": "neutral",
-          "netto": 0,
-          "positive_ord": [],
-          "negative_ord": []
-        },
-        {
           "titel": "BP, Ørsted Launch Green Hydrogen Project - Breakbulk Events",
-          "kategori": "neutral",
-          "netto": 0,
-          "positive_ord": [],
-          "negative_ord": []
-        },
-        {
-          "titel": "Ørsted Wins 2026 Earthshot Prize in Fix Our Climate Category for Renewable Energy Transformation - DredgeWire",
           "kategori": "neutral",
           "netto": 0,
           "positive_ord": [],
@@ -154,25 +152,11 @@
       "navn": "DSV",
       "score": 0,
       "status": "Overvejende neutral omtale",
-      "antal": 5,
+      "antal": 2,
       "positive": 0,
       "negative": 0,
-      "neutrale": 5,
+      "neutrale": 2,
       "nyheder": [
-        {
-          "titel": "DSDVY Stock Price and Chart — OTC:DSDVY - TradingView",
-          "kategori": "neutral",
-          "netto": 0,
-          "positive_ord": [],
-          "negative_ord": []
-        },
-        {
-          "titel": "3 Stocks Tied To Shifting Trade Routes Investors May Want To Watch - Yahoo Finance",
-          "kategori": "neutral",
-          "netto": 0,
-          "positive_ord": [],
-          "negative_ord": []
-        },
         {
           "titel": "DSV (CPSE:DSV) Stock Forecast & Analyst Predictions - Simply Wall St",
           "kategori": "neutral",
@@ -181,14 +165,7 @@
           "negative_ord": []
         },
         {
-          "titel": "NTG Nordic Transport Group A/S (NTG.CO) stock price, news, quote and history - Yahoo Finance Singapore",
-          "kategori": "neutral",
-          "netto": 0,
-          "positive_ord": [],
-          "negative_ord": []
-        },
-        {
-          "titel": "DSV A/S (0JN9) Repurchases 217,760 Shares for DKK 306.7 Million in Ongoing Buyback Programme - kalkine.co.uk",
+          "titel": "DSV Bangladesh wins Freight Forwarder and Logistics Gold - The Bangladesh Monitor",
           "kategori": "neutral",
           "netto": 0,
           "positive_ord": [],
@@ -214,7 +191,7 @@
           "negative_ord": []
         },
         {
-          "titel": "Learn Why The Bull Case For Maersk Stock Could Change Following Strong Quarterly Earnings - Simply Wall St",
+          "titel": "Is Ryder System (R) Stock Outpacing Its Transportation Peers This Year? - Yahoo Finance",
           "kategori": "neutral",
           "netto": 0,
           "positive_ord": [],
@@ -228,14 +205,14 @@
           "negative_ord": []
         },
         {
-          "titel": "Nippon Yusen Kabushiki Kaisha (9101.T) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+          "titel": "Kepler Cheuvreux lowers price target for A.P. Moller-Maersk to DKK21,500 (24,000), reiterates hold - BN - marketscreener.com",
           "kategori": "neutral",
           "netto": 0,
           "positive_ord": [],
           "negative_ord": []
         },
         {
-          "titel": "Kepler Cheuvreux lowers price target for A.P. Moller-Maersk to DKK21,500 (24,000), reiterates hold - BN - marketscreener.com",
+          "titel": "FedEx Corporation (FDX) stock price, news, quote and history - Yahoo Finance UK",
           "kategori": "neutral",
           "netto": 0,
           "positive_ord": [],
@@ -254,7 +231,7 @@
       "neutrale": 5,
       "nyheder": [
         {
-          "titel": "Danske Bank Fair Fund Opens Claims Process to Compensate Eligible Investors in Danske ADRs and Common Stock - Yahoo Finance",
+          "titel": "Danske Bank A/S (DANSKE.CO) Stock Price, News, Quote & History - Yahoo! Finance Canada",
           "kategori": "neutral",
           "netto": 0,
           "positive_ord": [],
@@ -282,7 +259,7 @@
           "negative_ord": []
         },
         {
-          "titel": "Danske Bank A S Buys 274,900 Shares of Best Buy Co., Inc. $BBY - MarketBeat",
+          "titel": "Danske Bank Fair Fund Opens Claims Process to Compensate Eligible Investors in Danske ADRs and Common Stock - Yahoo! Finance Canada",
           "kategori": "neutral",
           "netto": 0,
           "positive_ord": [],
@@ -417,7 +394,30 @@
       "neutrale": 4,
       "nyheder": [
         {
+          "titel": "EXCLUSIVE: Nvidia's accounting is a focus of US SEC investigation, sources say - Reuters",
+          "kategori": "negativ",
+          "netto": -2,
+          "positive_ord": [],
+          "negative_ord": [
+            "investigation"
+          ]
+        },
+        {
           "titel": "Nvidia (NVDA) Stock Drops Despite Q3 Results Showing Huge AI Earnings - Yahoo Finance",
+          "kategori": "neutral",
+          "netto": 0,
+          "positive_ord": [],
+          "negative_ord": []
+        },
+        {
+          "titel": "NVDA Stock Quote Price and Forecast - CNN",
+          "kategori": "neutral",
+          "netto": 0,
+          "positive_ord": [],
+          "negative_ord": []
+        },
+        {
+          "titel": "Will Nvidia stock go back up? Why NVDA plunged to $125.53 and what could spark a recovery - Clarin.com",
           "kategori": "neutral",
           "netto": 0,
           "positive_ord": [],
@@ -429,29 +429,6 @@
           "netto": 0,
           "positive_ord": [],
           "negative_ord": []
-        },
-        {
-          "titel": "Nvidia Slides After Blowout Earnings As Investigations Line Up; Is Nvidia Stock A Sell Now? - Investor's Business Daily",
-          "kategori": "neutral",
-          "netto": 0,
-          "positive_ord": [],
-          "negative_ord": []
-        },
-        {
-          "titel": "Nvidia stock extends $2.5 trillion rout as SEC probe reportedly investigates its accounting - Yahoo Finance",
-          "kategori": "neutral",
-          "netto": 0,
-          "positive_ord": [],
-          "negative_ord": []
-        },
-        {
-          "titel": "Nvidia stock plunges 14%, wraps up longest weekly losing streak since 2008 financial crisis - CNBC",
-          "kategori": "negativ",
-          "netto": -3,
-          "positive_ord": [],
-          "negative_ord": [
-            "stock plunges"
-          ]
         }
       ]
     },
@@ -466,7 +443,7 @@
       "neutrale": 5,
       "nyheder": [
         {
-          "titel": "TSLA Stock Quote Price and Forecast - CNN",
+          "titel": "Tesla Inc (TSLA.O) | Stock Price & Latest News - Reuters",
           "kategori": "neutral",
           "netto": 0,
           "positive_ord": [],
@@ -494,7 +471,7 @@
           "negative_ord": []
         },
         {
-          "titel": "Tesla (TSLA) Stock Price, News, Quotes, Financial Reports - Moomoo",
+          "titel": "Should You Buy Tesla or SpaceX Stock Before Their Potential Merger? - The Motley Fool",
           "kategori": "neutral",
           "netto": 0,
           "positive_ord": [],
@@ -513,6 +490,13 @@
       "neutrale": 4,
       "nyheder": [
         {
+          "titel": "AAPL Stock Quote Price and Forecast - CNN",
+          "kategori": "neutral",
+          "netto": 0,
+          "positive_ord": [],
+          "negative_ord": []
+        },
+        {
           "titel": "Apple (AAPL) Stock Could Be 33% Overvalued On Fresh Service Outage Concerns - Yahoo Finance",
           "kategori": "negativ",
           "netto": -1,
@@ -529,13 +513,6 @@
           "negative_ord": []
         },
         {
-          "titel": "How To Buy Apple (AAPL) Stocks & Shares - Forbes",
-          "kategori": "neutral",
-          "netto": 0,
-          "positive_ord": [],
-          "negative_ord": []
-        },
-        {
           "titel": "Apple(AAPL) Stock Price Today | Quotes & News - Moomoo",
           "kategori": "neutral",
           "netto": 0,
@@ -543,7 +520,7 @@
           "negative_ord": []
         },
         {
-          "titel": "What Are Apple Investors Betting On? - Trefis",
+          "titel": "Apple Stock Price Forecast. Should You Buy AAPL? - StockInvest.us",
           "kategori": "neutral",
           "netto": 0,
           "positive_ord": [],
@@ -562,7 +539,21 @@
       "neutrale": 5,
       "nyheder": [
         {
-          "titel": "Microsoft (MSFT) Stock May Look Reasonable As AI Commitments Draw Scrutiny - Yahoo Finance",
+          "titel": "Microsoft Stock Hits Seven-Week Low: Is a Bigger Drop Coming? - Yahoo Finance",
+          "kategori": "neutral",
+          "netto": 0,
+          "positive_ord": [],
+          "negative_ord": []
+        },
+        {
+          "titel": "MSFT Stock Quote Price and Forecast - CNN",
+          "kategori": "neutral",
+          "netto": 0,
+          "positive_ord": [],
+          "negative_ord": []
+        },
+        {
+          "titel": "Microsoft Corp (MSFT-Q) Stock Price and News - The Globe and Mail",
           "kategori": "neutral",
           "netto": 0,
           "positive_ord": [],
@@ -577,20 +568,6 @@
         },
         {
           "titel": "Microsoft Stock Price Forecast. Should You Buy MSFT? - StockInvest.us",
-          "kategori": "neutral",
-          "netto": 0,
-          "positive_ord": [],
-          "negative_ord": []
-        },
-        {
-          "titel": "Microsoft(MSFT) Stock Price Today | Quotes & News - Moomoo",
-          "kategori": "neutral",
-          "netto": 0,
-          "positive_ord": [],
-          "negative_ord": []
-        },
-        {
-          "titel": "Microsoft (NASDAQ:MSFT): A High-ROIC Quality Stock for Long-Term Investors - ChartMill",
           "kategori": "neutral",
           "netto": 0,
           "positive_ord": [],
@@ -665,6 +642,20 @@
           "negative_ord": []
         },
         {
+          "titel": "Meta Platforms(META) Stock Price Today | Quotes & News - Moomoo",
+          "kategori": "neutral",
+          "netto": 0,
+          "positive_ord": [],
+          "negative_ord": []
+        },
+        {
+          "titel": "Meta Platforms (META) Stock Quotes, Company News And Chart Analysis - Investor's Business Daily",
+          "kategori": "neutral",
+          "netto": 0,
+          "positive_ord": [],
+          "negative_ord": []
+        },
+        {
           "titel": "Why is Meta Platforms stock sliding today? - Investing.com",
           "kategori": "neutral",
           "netto": 0,
@@ -672,21 +663,7 @@
           "negative_ord": []
         },
         {
-          "titel": "How to Play META Stock as Meta Platforms Tests a New Prediction Markets App - Barchart.com",
-          "kategori": "neutral",
-          "netto": 0,
-          "positive_ord": [],
-          "negative_ord": []
-        },
-        {
-          "titel": "Is Meta Stock Still a Buy After Borrowing About $25 Billion This Month? - The Motley Fool",
-          "kategori": "neutral",
-          "netto": 0,
-          "positive_ord": [],
-          "negative_ord": []
-        },
-        {
-          "titel": "Meta Platforms(META) Stock Price Today | Quotes & News - Moomoo",
+          "titel": "Meta Platforms (META) Stock Price Target 2026 & Analyst Forecast - Benzinga",
           "kategori": "neutral",
           "netto": 0,
           "positive_ord": [],
@@ -697,12 +674,12 @@
     {
       "ticker": "GOOGL",
       "navn": "Alphabet",
-      "score": 0,
-      "status": "Overvejende neutral omtale",
+      "score": -20,
+      "status": "Forsigtig pessimisme",
       "antal": 5,
       "positive": 0,
-      "negative": 0,
-      "neutrale": 5,
+      "negative": 1,
+      "neutrale": 4,
       "nyheder": [
         {
           "titel": "Alphabet Stock Is Falling. Here’s Why Investors Should Be Buying the Dip. - Yahoo Finance",
@@ -719,21 +696,23 @@
           "negative_ord": []
         },
         {
-          "titel": "Alphabet: Why I Caught The Falling Knife (NASDAQ:GOOG) - Seeking Alpha",
-          "kategori": "neutral",
-          "netto": 0,
+          "titel": "Stock Market Today, Nov. 19: Alphabet Shares Fall as Anthropic Nasdaq Debut Puts Fresh Value on Google's Stake - The Motley Fool",
+          "kategori": "negativ",
+          "netto": -2,
           "positive_ord": [],
-          "negative_ord": []
-        },
-        {
-          "titel": "How to Invest in Google Stock (GOOG)(GOOGL) - The Motley Fool",
-          "kategori": "neutral",
-          "netto": 0,
-          "positive_ord": [],
-          "negative_ord": []
+          "negative_ord": [
+            "shares fall"
+          ]
         },
         {
           "titel": "How To Buy Alphabet (GOOGL) Stocks & Shares - Forbes",
+          "kategori": "neutral",
+          "netto": 0,
+          "positive_ord": [],
+          "negative_ord": []
+        },
+        {
+          "titel": "Google Stock Price Forecast. Should You Buy GOOGL? - StockInvest.us",
           "kategori": "neutral",
           "netto": 0,
           "positive_ord": [],
@@ -759,14 +738,14 @@
           "negative_ord": []
         },
         {
-          "titel": "Advanced Micro Devices (AMD) Stock Predictions for 2026 and Beyond - The Motley Fool",
+          "titel": "Adv Micro Devices (AMD-Q) Stock Price and News - The Globe and Mail",
           "kategori": "neutral",
           "netto": 0,
           "positive_ord": [],
           "negative_ord": []
         },
         {
-          "titel": "AMD dives on short seller report of alleged China exposure - CNBC",
+          "titel": "Advanced Micro Devices (AMD) Stock Predictions for 2026 and Beyond - The Motley Fool",
           "kategori": "neutral",
           "netto": 0,
           "positive_ord": [],
@@ -780,7 +759,7 @@
           "negative_ord": []
         },
         {
-          "titel": "Why is Advanced Micro Devices stock tumbling today? - Investing.com",
+          "titel": "AMD dives on short seller report of alleged China exposure - CNBC",
           "kategori": "neutral",
           "netto": 0,
           "positive_ord": [],
@@ -827,7 +806,7 @@
           "negative_ord": []
         },
         {
-          "titel": "Capture A Return From Oracle Stock Weakness With A Butterfly Trade - Investor's Business Daily",
+          "titel": "Oracle Stock Price Forecast. Should You Buy ORCL? - StockInvest.us",
           "kategori": "neutral",
           "netto": 0,
           "positive_ord": [],
