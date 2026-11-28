@@ -1,5 +1,5 @@
 {
-  "genereret": "2026-11-27T01:25:44.776218+00:00",
+  "genereret": "2026-11-28T01:20:15.289808+00:00",
   "antal": 19,
   "aktier": [
     {
@@ -15,6 +15,54 @@
       "macd_kryds": "Intet nyt kryds",
       "stop_loss": 338.46,
       "kursmaal": 381.26,
+      "forklaring": {
+        "positive": [
+          "Kursen ligger over EMA20.",
+          "Kursen ligger over EMA50.",
+          "RSI viser moderat positivt momentum."
+        ],
+        "negative": [
+          "Der mangler volumenbekræftelse."
+        ]
+      }
+    },
+    {
+      "ticker": "AMBU-B.CO",
+      "navn": "Ambu",
+      "dato": "2026-11-26",
+      "kurs": 86.85,
+      "score": 70,
+      "signal": "Hold øje",
+      "rsi": 57.26,
+      "atr": 2.22,
+      "volumen_ratio": 0.76,
+      "macd_kryds": "Intet nyt kryds",
+      "stop_loss": 82.4,
+      "kursmaal": 93.52,
+      "forklaring": {
+        "positive": [
+          "Kursen ligger over EMA20.",
+          "Kursen ligger over EMA50.",
+          "RSI viser moderat positivt momentum."
+        ],
+        "negative": [
+          "Der mangler volumenbekræftelse."
+        ]
+      }
+    },
+    {
+      "ticker": "PNDORA.CO",
+      "navn": "Pandora",
+      "dato": "2026-11-26",
+      "kurs": 935.4,
+      "score": 70,
+      "signal": "Hold øje",
+      "rsi": 60.63,
+      "atr": 26.95,
+      "volumen_ratio": 0.9,
+      "macd_kryds": "Intet nyt kryds",
+      "stop_loss": 881.5,
+      "kursmaal": 1016.25,
       "forklaring": {
         "positive": [
           "Kursen ligger over EMA20.",
@@ -51,18 +99,66 @@
       }
     },
     {
-      "ticker": "PNDORA.CO",
-      "navn": "Pandora",
-      "dato": "2026-11-25",
-      "kurs": 922.4,
-      "score": 70,
-      "signal": "Hold øje",
-      "rsi": 57.76,
-      "atr": 27.69,
-      "volumen_ratio": 1.58,
+      "ticker": "ORSTED.CO",
+      "navn": "Ørsted",
+      "dato": "2026-11-26",
+      "kurs": 140.8,
+      "score": 60,
+      "signal": "Afvent",
+      "rsi": 54.18,
+      "atr": 3.89,
+      "volumen_ratio": 0.61,
       "macd_kryds": "Intet nyt kryds",
-      "stop_loss": 867.03,
-      "kursmaal": 1005.46,
+      "stop_loss": 133.02,
+      "kursmaal": 152.47,
+      "forklaring": {
+        "positive": [
+          "Kursen ligger over EMA20.",
+          "Kursen ligger over EMA50.",
+          "RSI viser moderat positivt momentum."
+        ],
+        "negative": [
+          "Der mangler volumenbekræftelse."
+        ]
+      }
+    },
+    {
+      "ticker": "NOVO-B.CO",
+      "navn": "Novo Nordisk",
+      "dato": "2026-11-26",
+      "kurs": 277.25,
+      "score": 60,
+      "signal": "Afvent",
+      "rsi": 56.58,
+      "atr": 7.27,
+      "volumen_ratio": 0.48,
+      "macd_kryds": "Intet nyt kryds",
+      "stop_loss": 262.7,
+      "kursmaal": 299.07,
+      "forklaring": {
+        "positive": [
+          "Kursen ligger over EMA20.",
+          "Kursen ligger over EMA50.",
+          "RSI viser moderat positivt momentum."
+        ],
+        "negative": [
+          "Der mangler volumenbekræftelse."
+        ]
+      }
+    },
+    {
+      "ticker": "DANSKE.CO",
+      "navn": "Danske Bank",
+      "dato": "2026-11-26",
+      "kurs": 361.2,
+      "score": 55,
+      "signal": "Afvent",
+      "rsi": 50.61,
+      "atr": 6.91,
+      "volumen_ratio": 0.54,
+      "macd_kryds": "Intet nyt kryds",
+      "stop_loss": 347.38,
+      "kursmaal": 381.93,
       "forklaring": {
         "positive": [
           "Kursen ligger over EMA20.",
@@ -77,70 +173,48 @@
     {
       "ticker": "GMAB.CO",
       "navn": "Genmab",
-      "dato": "2026-11-25",
-      "kurs": 3771.0,
+      "dato": "2026-11-26",
+      "kurs": 3872.0,
       "score": 55,
       "signal": "Afvent",
-      "rsi": 67.86,
-      "atr": 142.58,
-      "volumen_ratio": 0.82,
+      "rsi": 70.55,
+      "atr": 140.61,
+      "volumen_ratio": 0.57,
       "macd_kryds": "Intet nyt kryds",
-      "stop_loss": 3485.84,
-      "kursmaal": 4198.74,
+      "stop_loss": 3590.78,
+      "kursmaal": 4293.83,
       "forklaring": {
         "positive": [
           "Kursen ligger over EMA20.",
           "Kursen ligger over EMA50."
         ],
         "negative": [
+          "RSI er over 70, hvilket kan indikere en overkøbt aktie.",
           "Der mangler volumenbekræftelse."
         ]
       }
     },
     {
-      "ticker": "AMBU-B.CO",
-      "navn": "Ambu",
-      "dato": "2026-11-25",
-      "kurs": 85.85,
-      "score": 55,
+      "ticker": "ZEAL.CO",
+      "navn": "Zealand Pharma",
+      "dato": "2026-11-26",
+      "kurs": 236.1,
+      "score": 50,
       "signal": "Afvent",
-      "rsi": 54.43,
-      "atr": 2.26,
-      "volumen_ratio": 0.8,
-      "macd_kryds": "Intet nyt kryds",
-      "stop_loss": 81.33,
-      "kursmaal": 92.63,
-      "forklaring": {
-        "positive": [
-          "Kursen ligger over EMA50.",
-          "RSI viser moderat positivt momentum."
-        ],
-        "negative": [
-          "Kursen ligger under EMA20.",
-          "Der mangler volumenbekræftelse."
-        ]
-      }
-    },
-    {
-      "ticker": "NOVO-B.CO",
-      "navn": "Novo Nordisk",
-      "dato": "2026-11-25",
-      "kurs": 274.3,
-      "score": 45,
-      "signal": "Afvent",
-      "rsi": 54.21,
-      "atr": 7.4,
-      "volumen_ratio": 0.67,
-      "macd_kryds": "Intet nyt kryds",
-      "stop_loss": 259.5,
-      "kursmaal": 296.5,
+      "rsi": 52.22,
+      "atr": 9.05,
+      "volumen_ratio": 1.03,
+      "macd_kryds": "Bullish kryds",
+      "stop_loss": 218.01,
+      "kursmaal": 263.24,
       "forklaring": {
         "positive": [
           "Kursen ligger over EMA20.",
-          "Kursen ligger over EMA50.",
-          "RSI viser moderat positivt momentum."
+          "RSI viser moderat positivt momentum.",
+          "MACD har netop givet et positivt kryds."
         ],
         "negative": [
+          "Kursen ligger under EMA50.",
           "Der mangler volumenbekræftelse."
         ]
       }
@@ -148,16 +222,16 @@
     {
       "ticker": "DSV.CO",
       "navn": "DSV",
-      "dato": "2026-11-25",
-      "kurs": 1376.5,
+      "dato": "2026-11-26",
+      "kurs": 1381.5,
       "score": 45,
       "signal": "Afvent",
-      "rsi": 46.71,
-      "atr": 37.81,
-      "volumen_ratio": 0.95,
+      "rsi": 47.69,
+      "atr": 37.29,
+      "volumen_ratio": 0.5,
       "macd_kryds": "Intet nyt kryds",
-      "stop_loss": 1300.89,
-      "kursmaal": 1489.92,
+      "stop_loss": 1306.93,
+      "kursmaal": 1493.36,
       "forklaring": {
         "positive": [
           "Kursen ligger over EMA50.",
@@ -184,30 +258,6 @@
       "kursmaal": 540.51,
       "forklaring": {
         "positive": [],
-        "negative": [
-          "Kursen ligger under EMA20.",
-          "Kursen ligger under EMA50.",
-          "Der mangler volumenbekræftelse."
-        ]
-      }
-    },
-    {
-      "ticker": "ORSTED.CO",
-      "navn": "Ørsted",
-      "dato": "2026-11-25",
-      "kurs": 137.5,
-      "score": 30,
-      "signal": "Svagt teknisk billede",
-      "rsi": 49.0,
-      "atr": 3.94,
-      "volumen_ratio": 1.05,
-      "macd_kryds": "Intet nyt kryds",
-      "stop_loss": 129.63,
-      "kursmaal": 149.31,
-      "forklaring": {
-        "positive": [
-          "RSI viser moderat positivt momentum."
-        ],
         "negative": [
           "Kursen ligger under EMA20.",
           "Kursen ligger under EMA50.",
@@ -260,29 +310,6 @@
       }
     },
     {
-      "ticker": "DANSKE.CO",
-      "navn": "Danske Bank",
-      "dato": "2026-11-25",
-      "kurs": 353.1,
-      "score": 18,
-      "signal": "Svagt teknisk billede",
-      "rsi": 42.77,
-      "atr": 6.71,
-      "volumen_ratio": 0.86,
-      "macd_kryds": "Bearish kryds",
-      "stop_loss": 339.68,
-      "kursmaal": 373.24,
-      "forklaring": {
-        "positive": [],
-        "negative": [
-          "Kursen ligger under EMA20.",
-          "Kursen ligger under EMA50.",
-          "MACD har netop givet et negativt kryds.",
-          "Der mangler volumenbekræftelse."
-        ]
-      }
-    },
-    {
       "ticker": "META",
       "navn": "Meta",
       "dato": "2026-11-25",
@@ -309,22 +336,21 @@
     {
       "ticker": "MAERSK-B.CO",
       "navn": "Mærsk B",
-      "dato": "2026-11-25",
-      "kurs": 18995.0,
+      "dato": "2026-11-26",
+      "kurs": 19085.0,
       "score": 10,
       "signal": "Svagt teknisk billede",
-      "rsi": 29.49,
-      "atr": 749.49,
-      "volumen_ratio": 1.44,
+      "rsi": 30.75,
+      "atr": 732.03,
+      "volumen_ratio": 0.78,
       "macd_kryds": "Intet nyt kryds",
-      "stop_loss": 17496.01,
-      "kursmaal": 21243.48,
+      "stop_loss": 17620.94,
+      "kursmaal": 21281.09,
       "forklaring": {
         "positive": [],
         "negative": [
           "Kursen ligger under EMA20.",
           "Kursen ligger under EMA50.",
-          "RSI er under 30. Aktien er oversolgt, men kan fortsætte med at falde.",
           "Der mangler volumenbekræftelse."
         ]
       }
@@ -342,28 +368,6 @@
       "macd_kryds": "Intet nyt kryds",
       "stop_loss": 313.0,
       "kursmaal": 545.57,
-      "forklaring": {
-        "positive": [],
-        "negative": [
-          "Kursen ligger under EMA20.",
-          "Kursen ligger under EMA50.",
-          "Der mangler volumenbekræftelse."
-        ]
-      }
-    },
-    {
-      "ticker": "ORCL",
-      "navn": "Oracle",
-      "dato": "2026-11-25",
-      "kurs": 103.88,
-      "score": 8,
-      "signal": "Svagt teknisk billede",
-      "rsi": 37.78,
-      "atr": 8.52,
-      "volumen_ratio": 0.95,
-      "macd_kryds": "Intet nyt kryds",
-      "stop_loss": 86.84,
-      "kursmaal": 129.44,
       "forklaring": {
         "positive": [],
         "negative": [
@@ -396,18 +400,18 @@
       }
     },
     {
-      "ticker": "ZEAL.CO",
-      "navn": "Zealand Pharma",
+      "ticker": "ORCL",
+      "navn": "Oracle",
       "dato": "2026-11-25",
-      "kurs": 225.8,
+      "kurs": 103.88,
       "score": 8,
       "signal": "Svagt teknisk billede",
-      "rsi": 44.37,
-      "atr": 8.86,
-      "volumen_ratio": 1.4,
+      "rsi": 37.78,
+      "atr": 8.52,
+      "volumen_ratio": 0.95,
       "macd_kryds": "Intet nyt kryds",
-      "stop_loss": 208.09,
-      "kursmaal": 252.37,
+      "stop_loss": 86.84,
+      "kursmaal": 129.44,
       "forklaring": {
         "positive": [],
         "negative": [
@@ -420,22 +424,21 @@
     {
       "ticker": "VWS.CO",
       "navn": "Vestas",
-      "dato": "2026-11-25",
-      "kurs": 163.0,
+      "dato": "2026-11-26",
+      "kurs": 168.0,
       "score": 0,
       "signal": "Svagt teknisk billede",
-      "rsi": 28.88,
-      "atr": 7.07,
-      "volumen_ratio": 1.16,
+      "rsi": 34.55,
+      "atr": 6.95,
+      "volumen_ratio": 0.75,
       "macd_kryds": "Intet nyt kryds",
-      "stop_loss": 148.86,
-      "kursmaal": 184.22,
+      "stop_loss": 154.09,
+      "kursmaal": 188.86,
       "forklaring": {
         "positive": [],
         "negative": [
           "Kursen ligger under EMA20.",
           "Kursen ligger under EMA50.",
-          "RSI er under 30. Aktien er oversolgt, men kan fortsætte med at falde.",
           "Der mangler volumenbekræftelse."
         ]
       }
